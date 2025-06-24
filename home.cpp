@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string names[3][3]={
+        {"luftansa" , "blue line", "emiriates"},
+        {"sabeena", "areena", "green line"},
+    };
+
+    string timing[3][3]={
+        {"2:30 PM", "10:00 AM", "12:00"},
+        {"3:00 AM", "7:00 PM",  "8:00"},
+    };
+    string inputName;
+    cout << "Enter the name "<<endl;
+    getline(cin, inputName);
+
+    bool found= false;
+
+    for(int i=0;  i<3; i++){
+     for(int j=0; j<3; j++){
+    if(inputName == names[i][j]){
+        cout << "the Airline  name is "<< names[i][j] <<endl;
+    cout << "The planes timing is : " << timing [i][j]<<endl;
+    found = true;
+    break;
+}
+
+        }
+        if(found)break;
+    }
+    if(!found){
+        cout << "airlanes is not available ";
+    }
+    return 0;
+}
